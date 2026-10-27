@@ -191,7 +191,7 @@ ul {
 .mm-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100000;
   background: rgba(8, 16, 30, 0.98);
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
