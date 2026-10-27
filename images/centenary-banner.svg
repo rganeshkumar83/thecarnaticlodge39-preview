@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="centG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0e1724"/>
+      <stop offset="100%" stop-color="#19283f"/>
+    </linearGradient>
+    <linearGradient id="laurelGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2c2"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8a6214"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#centG)"/>
+  
+  <!-- Banner Body -->
+  <g transform="translate(400, 240)">
+    <!-- Ornate Shield -->
+    <path d="M-180,-160 L180,-160 L180,60 Q180,180 0,220 Q-180,180 -180,60 Z" fill="#080e18" stroke="url(#laurelGold)" stroke-width="4"/>
+    
+    <!-- Outer Laurel Wreath -->
+    <circle cx="0" cy="0" r="110" fill="none" stroke="url(#laurelGold)" stroke-width="2" stroke-dasharray="8,6" opacity="0.7"/>
+
+    <!-- Square and Compasses in Center -->
+    <g transform="translate(0, -20) scale(0.7)">
+      <!-- Compasses -->
+      <path d="M0,-80 L-50,70 L-40,75 L0,-60 L40,75 L50,70 Z" fill="url(#laurelGold)"/>
+      <!-- Square -->
+      <path d="M0,50 L-80,-30 L-70,-40 L0,30 L70,-40 L80,-30 Z" fill="url(#laurelGold)"/>
+      <text x="0" y="5" font-family="'Cinzel', serif" font-size="32" font-weight="700" fill="url(#laurelGold)" text-anchor="middle">G</text>
+    </g>
+
+    <text x="0" y="70" font-family="'Cinzel', serif" font-size="28" font-weight="700" fill="#fff" letter-spacing="3" text-anchor="middle">1883 - 1983</text>
+    <text x="0" y="100" font-family="'Cinzel', serif" font-size="16" font-weight="600" fill="#d4af37" letter-spacing="4" text-anchor="middle">CENTENARY JUBILEE</text>
+    <text x="0" y="130" font-family="'Cinzel', serif" font-size="12" fill="#c3cfe2" letter-spacing="2" text-anchor="middle">M.W. BRO. SITARAM JAIPURIA, GRAND MASTER</text>
+    <text x="0" y="155" font-family="'Cinzel', serif" font-size="12" fill="#d4af37" letter-spacing="3" text-anchor="middle">140+ YEARS OF GLORIOUS LABOUR</text>
+  </g>
+</svg>

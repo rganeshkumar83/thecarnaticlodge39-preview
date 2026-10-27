@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#040913" />
+      <stop offset="45%" stop-color="#0b172a" />
+      <stop offset="75%" stop-color="#12243d" />
+      <stop offset="100%" stop-color="#060c17" />
+    </linearGradient>
+
+    <radialGradient id="celestialGlow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ffd875" stop-opacity="0.35" />
+      <stop offset="35%" stop-color="#c5a059" stop-opacity="0.15" />
+      <stop offset="70%" stop-color="#0b172a" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="pillarGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a3d5b" />
+      <stop offset="25%" stop-color="#806429" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="75%" stop-color="#806429" />
+      <stop offset="100%" stop-color="#162338" />
+    </linearGradient>
+
+    <pattern id="mosaicCheckers" width="40" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+      <polygon points="0,0 20,0 40,20 20,20" fill="#1c2b42" />
+      <polygon points="20,0 40,0 20,20 0,20" fill="#08101c" />
+    </pattern>
+  </defs>
+
+  <!-- Deep Hall Background -->
+  <rect width="1200" height="675" fill="url(#bgH)" />
+  <rect width="1200" height="675" fill="url(#celestialGlow)" />
+
+  <!-- Vaulted Ceiling Arches -->
+  <path d="M 0,150 Q 600,-60 1200,150 L 1200,0 L 0,0 Z" fill="#070e1a" opacity="0.8" />
+  <path d="M 100,200 Q 600,0 1100,200" stroke="#d4af37" stroke-width="2" fill="none" opacity="0.3" />
+  <path d="M 200,250 Q 600,60 1000,250" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="8,6" fill="none" opacity="0.25" />
+
+  <!-- Radiant Blazing Star / All-Seeing Eye Center -->
+  <g transform="translate(600, 150)">
+    <!-- Radiance Rays -->
+    <g stroke="#d4af37" stroke-width="1" opacity="0.4">
+      <line x1="0" y1="0" x2="0" y2="-90" />
+      <line x1="0" y1="0" x2="64" y2="-64" />
+      <line x1="0" y1="0" x2="90" y2="0" />
+      <line x1="0" y1="0" x2="64" y2="64" />
+      <line x1="0" y1="0" x2="0" y2="90" />
+      <line x1="0" y1="0" x2="-64" y2="64" />
+      <line x1="0" y1="0" x2="-90" y2="0" />
+      <line x1="0" y1="0" x2="-64" y2="-64" />
+      <line x1="0" y1="0" x2="35" y2="-84" />
+      <line x1="0" y1="0" x2="-35" y2="-84" />
+      <line x1="0" y1="0" x2="84" y2="-35" />
+      <line x1="0" y1="0" x2="-84" y2="-35" />
+    </g>
+    <!-- Five-pointed Blazing Star -->
+    <polygon points="0,-45 13,-14 45,-14 19,6 29,38 0,18 -29,38 -19,6 -45,-14 -13,-14" fill="#ffd978" filter="drop-shadow(0 0 18px rgba(255,217,120,0.8))" />
+    <text x="0" y="7" font-family="'Cinzel', serif" font-size="22" font-weight="700" fill="#0b172a" text-anchor="middle" dominant-baseline="middle">G</text>
+  </g>
+
+  <!-- Grand Pillars Left (Boaz) -->
+  <g transform="translate(240, 180)">
+    <!-- Globe -->
+    <circle cx="0" cy="0" r="30" fill="url(#pillarGold)" />
+    <ellipse cx="0" cy="0" rx="30" ry="12" fill="none" stroke="#2a1805" stroke-width="1.5" />
+    <line x1="0" y1="-30" x2="0" y2="30" stroke="#2a1805" stroke-width="1.5" />
+    <!-- Lilywork / Capital -->
+    <path d="M -38,30 L 38,30 L 28,60 L -28,60 Z" fill="url(#pillarGold)" stroke="#3d280b" stroke-width="2" />
+    <!-- Fluted Column Shaft -->
+    <rect x="-24" y="60" width="48" height="340" fill="url(#pillarGold)" />
+    <!-- Column Flutes -->
+    <line x1="-16" y1="65" x2="-16" y2="395" stroke="#4a3411" stroke-width="2" />
+    <line x1="-8" y1="65" x2="-8" y2="395" stroke="#f0cf78" stroke-width="1.5" />
+    <line x1="0" y1="65" x2="0" y2="395" stroke="#3a270b" stroke-width="2" />
+    <line x1="8" y1="65" x2="8" y2="395" stroke="#f0cf78" stroke-width="1.5" />
+    <line x1="16" y1="65" x2="16" y2="395" stroke="#4a3411" stroke-width="2" />
+    <!-- Base -->
+    <path d="M -32,400 L 32,400 L 40,430 L -40,430 Z" fill="url(#pillarGold)" />
+    <rect x="-48" y="430" width="96" height="20" fill="url(#pillarGold)" />
+    <text x="0" y="445" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#0b172a" text-anchor="middle">B</text>
+  </g>
+
+  <!-- Grand Pillars Right (Jachin) -->
+  <g transform="translate(960, 180)">
+    <!-- Globe -->
+    <circle cx="0" cy="0" r="30" fill="url(#pillarGold)" />
+    <ellipse cx="0" cy="0" rx="30" ry="12" fill="none" stroke="#2a1805" stroke-width="1.5" />
+    <line x1="0" y1="-30" x2="0" y2="30" stroke="#2a1805" stroke-width="1.5" />
+    <!-- Lilywork / Capital -->
+    <path d="M -38,30 L 38,30 L 28,60 L -28,60 Z" fill="url(#pillarGold)" stroke="#3d280b" stroke-width="2" />
+    <!-- Fluted Column Shaft -->
+    <rect x="-24" y="60" width="48" height="340" fill="url(#pillarGold)" />
+    <!-- Column Flutes -->
+    <line x1="-16" y1="65" x2="-16" y2="395" stroke="#4a3411" stroke-width="2" />
+    <line x1="-8" y1="65" x2="-8" y2="395" stroke="#f0cf78" stroke-width="1.5" />
+    <line x1="0" y1="65" x2="0" y2="395" stroke="#3a270b" stroke-width="2" />
+    <line x1="8" y1="65" x2="8" y2="395" stroke="#f0cf78" stroke-width="1.5" />
+    <line x1="16" y1="65" x2="16" y2="395" stroke="#4a3411" stroke-width="2" />
+    <!-- Base -->
+    <path d="M -32,400 L 32,400 L 40,430 L -40,430 Z" fill="url(#pillarGold)" />
+    <rect x="-48" y="430" width="96" height="20" fill="url(#pillarGold)" />
+    <text x="0" y="445" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#0b172a" text-anchor="middle">J</text>
+  </g>
+
+  <!-- Perspective Mosaic Pavement Flooring at Base -->
+  <polygon points="120,675 360,490 840,490 1080,675" fill="#0a1422" stroke="#d4af37" stroke-width="2" />
+  
+  <!-- Perspective Floor Lines -->
+  <g stroke="#d4af37" stroke-width="0.7" opacity="0.3">
+    <!-- Orthogonals converging toward center altar -->
+    <line x1="120" y1="675" x2="520" y2="490" />
+    <line x1="260" y1="675" x2="550" y2="490" />
+    <line x1="400" y1="675" x2="575" y2="490" />
+    <line x1="540" y1="675" x2="590" y2="490" />
+    <line x1="660" y1="675" x2="610" y2="490" />
+    <line x1="800" y1="675" x2="625" y2="490" />
+    <line x1="940" y1="675" x2="650" y2="490" />
+    <line x1="1080" y1="675" x2="680" y2="490" />
+    <!-- Horizontals -->
+    <line x1="155" y1="640" x2="1045" y2="640" />
+    <line x1="205" y1="600" x2="995" y2="600" />
+    <line x1="260" y1="560" x2="940" y2="560" />
+    <line x1="315" y1="520" x2="885" y2="520" />
+  </g>
+
+  <!-- Central Masonic Altar -->
+  <g transform="translate(600, 485)">
+    <!-- Steps -->
+    <rect x="-110" y="45" width="220" height="15" fill="#13233c" stroke="#d4af37" stroke-width="1.2" />
+    <rect x="-95" y="30" width="190" height="15" fill="#182c4b" stroke="#d4af37" stroke-width="1.2" />
+    <rect x="-80" y="15" width="160" height="15" fill="#1f375e" stroke="#d4af37" stroke-width="1.2" />
+    <!-- Pedestal -->
+    <rect x="-65" y="-55" width="130" height="70" fill="url(#pillarGold)" stroke="#4a3411" stroke-width="1.5" />
+    <!-- Square and Compasses on Altar Side -->
+    <circle cx="0" cy="-20" r="18" fill="#0b172a" stroke="#d4af37" stroke-width="1" />
+    <text x="0" y="-16" font-family="'Cinzel', serif" font-size="16" font-weight="700" fill="#d4af37" text-anchor="middle">39</text>
+    <!-- Volume of Sacred Law (Open Book) on top of Altar -->
+    <path d="M -45,-60 Q -25,-68 0,-62 Q 25,-68 45,-60 L 45,-50 Q 25,-56 0,-52 Q -25,-56 -45,-50 Z" fill="#fdfaf0" stroke="#c5a059" stroke-width="1.5" />
+    <!-- Compass & Square resting on the VSL -->
+    <polygon points="0,-72 -12,-55 -8,-55 0,-68 8,-55 12,-55" fill="#d4af37" />
+  </g>
+
+  <!-- Master's Chair / East Dais in Deep Background -->
+  <g transform="translate(600, 310)" opacity="0.85">
+    <!-- Elevated Canopy -->
+    <path d="M -90,-80 L 90,-80 L 80,-40 L -80,-40 Z" fill="#7b1113" stroke="#d4af37" stroke-width="1.5" />
+    <text x="0" y="-55" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#ffd778" letter-spacing="3" text-anchor="middle">CARNATIC 39</text>
+    <!-- Chair back & finials -->
+    <rect x="-45" y="-40" width="90" height="110" rx="4" fill="#091322" stroke="#d4af37" stroke-width="1.5" />
+    <rect x="-35" y="-30" width="70" height="90" fill="#5c0d0f" />
+    <!-- Gavel / Pedestal -->
+    <rect x="-25" y="70" width="50" height="40" fill="url(#pillarGold)" />
+  </g>
+
+  <!-- Ambient Vignette Overlay -->
+  <rect width="1200" height="675" fill="none" stroke="#d4af37" stroke-width="3" opacity="0.4" />
+</svg>

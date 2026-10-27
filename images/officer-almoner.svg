@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="avBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12233c"/><stop offset="100%" stop-color="#080e18"/>
+    </linearGradient>
+    <linearGradient id="goldJ" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0c2"/><stop offset="50%" stop-color="#d4af37"/><stop offset="100%" stop-color="#8a6214"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#avBg)"/>
+  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#goldJ)" stroke-width="2"/>
+  <g transform="translate(150, 160)">
+    <path d="M-85,120 L85,120 L75,60 C55,25 35,25 0,35 C-35,25 -55,25 -75,60 Z" fill="#050a12"/>
+    <polygon points="0,35 -20,20 -15,10 0,15 15,10 20,20" fill="#fdfdfd"/>
+    <ellipse cx="0" cy="-35" rx="36" ry="46" fill="#152132" stroke="#d4af37" stroke-width="1.2"/>
+    <path d="M-40,25 C-30,70 -10,85 0,85 C10,85 30,70 40,25" fill="none" stroke="url(#goldJ)" stroke-width="6"/>
+    <!-- Scrip / Alms Purse Jewel (Almoner) -->
+    <path d="M-12,88 L12,88 L15,110 C15,116 0,118 0,118 C0,118 -15,116 -15,110 Z" fill="url(#goldJ)" stroke="#503505" stroke-width="1"/>
+    <circle cx="0" cy="95" r="4" fill="#12233c"/>
+  </g>
+</svg>

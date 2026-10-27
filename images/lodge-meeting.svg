@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hallG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a1424" />
+      <stop offset="100%" stop-color="#12243d" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#hallG)"/>
+  
+  <!-- Warm glow in center -->
+  <circle cx="400" cy="230" r="220" fill="#d4af37" opacity="0.08"/>
+  
+  <!-- Architectural Archway -->
+  <path d="M120,450 L120,180 Q400,60 680,180 L680,450" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.5"/>
+  <path d="M140,450 L140,190 Q400,80 660,190 L660,450" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+
+  <!-- Altar with Volume of Sacred Law & Square/Compass -->
+  <g transform="translate(400, 320)">
+    <rect x="-60" y="-30" width="120" height="70" fill="#1b2d48" stroke="#d4af37" stroke-width="2"/>
+    <!-- Book -->
+    <path d="M-35,-30 Q-15,-38 0,-32 Q15,-38 35,-30 L35,-22 Q15,-28 0,-24 Q-15,-28 -35,-22 Z" fill="#fff9e6" stroke="#c5a059"/>
+    <!-- Emblem on altar front -->
+    <circle cx="0" cy="8" r="14" fill="#0b172a" stroke="#d4af37" stroke-width="1"/>
+    <text x="0" y="13" font-family="'Cinzel', serif" font-size="12" font-weight="700" fill="#d4af37" text-anchor="middle">39</text>
+  </g>
+
+  <!-- Brethren in Stately Assembly (Silhouettes in Collars and Aprons) -->
+  <!-- Left Side Brethren -->
+  <g fill="#070d18" stroke="#d4af37" stroke-width="1.2">
+    <!-- Brother 1 -->
+    <circle cx="210" cy="270" r="18" fill="#d4af37" fill-opacity="0.2"/>
+    <path d="M185,350 L235,350 L230,295 Q210,285 190,295 Z"/>
+    <path d="M198,310 L222,310 L216,335 L204,335 Z" fill="#ffffff" fill-opacity="0.8"/> <!-- Masonic Apron -->
+    
+    <!-- Brother 2 -->
+    <circle cx="280" cy="255" r="18" fill="#d4af37" fill-opacity="0.2"/>
+    <path d="M255,350 L305,350 L300,280 Q280,270 260,280 Z"/>
+    <path d="M268,295 L292,295 L286,320 L274,320 Z" fill="#ffffff" fill-opacity="0.8"/>
+  </g>
+
+  <!-- Right Side Brethren -->
+  <g fill="#070d18" stroke="#d4af37" stroke-width="1.2">
+    <!-- Brother 3 -->
+    <circle cx="520" cy="255" r="18" fill="#d4af37" fill-opacity="0.2"/>
+    <path d="M495,350 L545,350 L540,280 Q520,270 500,280 Z"/>
+    <path d="M508,295 L532,295 L526,320 L514,320 Z" fill="#ffffff" fill-opacity="0.8"/>
+
+    <!-- Brother 4 -->
+    <circle cx="590" cy="270" r="18" fill="#d4af37" fill-opacity="0.2"/>
+    <path d="M565,350 L615,350 L610,295 Q590,285 570,295 Z"/>
+    <path d="M578,310 L602,310 L596,335 L584,335 Z" fill="#ffffff" fill-opacity="0.8"/>
+  </g>
+
+  <!-- Master on Dais in East (Center top) -->
+  <g transform="translate(400, 170)" stroke="#d4af37" stroke-width="1.5">
+    <circle cx="0" cy="-20" r="19" fill="#070d18"/>
+    <path d="M-28,60 L28,60 L24,-2 Q0,-12 -24,-2 Z" fill="#070d18"/>
+    <!-- Master's Collar and Jewel -->
+    <path d="M-14,0 L0,22 L14,0" fill="none" stroke="#e8c86d" stroke-width="3"/>
+    <polygon points="0,22 -6,30 6,30" fill="#e8c86d"/>
+    <!-- Pedestal & Gavel -->
+    <rect x="-35" y="60" width="70" height="25" fill="#1b2d48" stroke="#d4af37" stroke-width="1.5"/>
+  </g>
+
+  <!-- Stately Floor Mosaic -->
+  <path d="M0,450 L800,450 L800,500 L0,500 Z" fill="#060c16"/>
+  <line x1="0" y1="450" x2="800" y2="450" stroke="#d4af37" stroke-width="2"/>
+  
+  <text x="400" y="480" font-family="'Cinzel', serif" font-size="14" font-weight="700" fill="#d4af37" letter-spacing="4" text-anchor="middle">
+    REGULAR LABOUR IN THE CRAFT • EGMORE TEMPLE
+  </text>
+</svg>

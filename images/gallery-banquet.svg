@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="banqBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a121e"/>
+      <stop offset="100%" stop-color="#19283f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#banqBg)"/>
+
+  <!-- Warm ambient banquet chandelier light -->
+  <circle cx="400" cy="120" r="140" fill="#d4af37" opacity="0.12"/>
+  
+  <!-- Chandelier / Candelabra Silhouette -->
+  <g transform="translate(400, 90)">
+    <line x1="0" y1="-80" x2="0" y2="20" stroke="#d4af37" stroke-width="2"/>
+    <path d="M-80,0 Q0,40 80,0" fill="none" stroke="#d4af37" stroke-width="2.5"/>
+    <circle cx="-80" cy="-6" r="6" fill="#ffd978"/>
+    <circle cx="0" cy="8" r="6" fill="#ffd978"/>
+    <circle cx="80" cy="-6" r="6" fill="#ffd978"/>
+  </g>
+
+  <!-- Festive Board Dining Table -->
+  <g transform="translate(400, 310)">
+    <!-- Table Cloth & Surface -->
+    <polygon points="-320,40 320,40 280,120 -280,120" fill="#f8fafc" stroke="#d4af37" stroke-width="1.5"/>
+    <!-- Table Runner in Masonic Blue -->
+    <polygon points="-80,40 80,40 60,120 -60,120" fill="#1e3a8a"/>
+
+    <!-- Goblets / Glasses for Toasts -->
+    <g fill="#d4af37" opacity="0.8">
+      <path d="M-220,15 L-210,38 L-230,38 Z"/><line x1="-220" y1="38" x2="-220" y2="48" stroke="#d4af37" stroke-width="2"/><line x1="-226" y1="48" x2="-214" y2="48" stroke="#d4af37" stroke-width="2"/>
+      <path d="M-140,15 L-130,38 L-150,38 Z"/><line x1="-140" y1="38" x2="-140" y2="48" stroke="#d4af37" stroke-width="2"/><line x1="-146" y1="48" x2="-134" y2="48" stroke="#d4af37" stroke-width="2"/>
+      <path d="M140,15 L150,38 L130,38 Z"/><line x1="140" y1="38" x2="140" y2="48" stroke="#d4af37" stroke-width="2"/><line x1="134" y1="48" x2="146" y2="48" stroke="#d4af37" stroke-width="2"/>
+      <path d="M220,15 L230,38 L210,38 Z"/><line x1="220" y1="38" x2="220" y2="48" stroke="#d4af37" stroke-width="2"/><line x1="214" y1="48" x2="226" y2="48" stroke="#d4af37" stroke-width="2"/>
+    </g>
+
+    <!-- Centerpiece Floral / Gavel -->
+    <circle cx="0" cy="30" r="16" fill="#7b1113" stroke="#d4af37" stroke-width="1.5"/>
+  </g>
+
+  <!-- Title Ribbon -->
+  <rect x="230" y="440" width="340" height="32" rx="4" fill="#080f1a" stroke="#d4af37" stroke-width="1"/>
+  <text x="400" y="462" font-family="'Cinzel', serif" font-size="13" font-weight="700" fill="#d4af37" letter-spacing="3" text-anchor="middle">
+    TRADITIONAL FESTIVE BOARD FELLOWSHIP
+  </text>
+</svg>
