@@ -275,6 +275,10 @@ ul {
   position: relative;
 }
 
+.mm-nav-drawer-header {
+  display: none;
+}
+
 .mm-nav-link,
 .mm-nav-btn {
   background: transparent;

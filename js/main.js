@@ -28,6 +28,22 @@ function initNavbar() {
     document.body.appendChild(backdrop);
   }
 
+  // Inject mobile drawer header with title and close button if not present
+  if (navMenu && !navMenu.querySelector('.mm-nav-drawer-header')) {
+    const drawerHeader = document.createElement('li');
+    drawerHeader.className = 'mm-nav-drawer-header';
+    drawerHeader.innerHTML = `
+      <div class="mm-nav-drawer-title">
+        <span>The Carnatic Lodge</span>
+        <small>No: 39 GLI</small>
+      </div>
+      <button type="button" class="mm-nav-drawer-close" aria-label="Close navigation menu">✕</button>
+    `;
+    navMenu.prepend(drawerHeader);
+    const closeBtn = drawerHeader.querySelector('.mm-nav-drawer-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeNavMenu);
+  }
+
   function openNavMenu() {
     if (!navMenu || !hamburger) return;
     navMenu.classList.add('open');
@@ -74,11 +90,12 @@ function initNavbar() {
       }
     });
 
-    // Auto-close drawer when clicking any page link inside on mobile
-    navMenu.querySelectorAll('a').forEach(link => {
+    // Close drawer ONLY when clicking same-page in-page anchor jumps (e.g. href="#...")
+    // NEVER intercept standard page navigation links, so browser loads the next page smoothly
+    navMenu.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 1100) {
-          closeNavMenu();
+          setTimeout(closeNavMenu, 150);
         }
       });
     });
