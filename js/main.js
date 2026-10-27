@@ -20,6 +20,32 @@ function initNavbar() {
   const hamburger = document.querySelector('.mm-hamburger') || document.querySelector('.hamburger');
   const navMenu = document.querySelector('.mm-nav') || document.querySelector('.nav-menu');
 
+  // Create or attach mobile backdrop overlay
+  let backdrop = document.querySelector('.mm-nav-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'mm-nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openNavMenu() {
+    if (!navMenu || !hamburger) return;
+    navMenu.classList.add('open');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeNavMenu() {
+    if (!navMenu || !hamburger) return;
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -30,6 +56,9 @@ function initNavbar() {
         openNavMenu();
       }
     });
+
+    // Close when tapping on backdrop
+    backdrop.addEventListener('click', closeNavMenu);
 
     // Close when clicking outside
     document.addEventListener('click', (e) => {
@@ -44,20 +73,15 @@ function initNavbar() {
         closeNavMenu();
       }
     });
-  }
 
-  function openNavMenu() {
-    navMenu.classList.add('open');
-    hamburger.classList.add('active');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeNavMenu() {
-    navMenu.classList.remove('open');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    // Auto-close drawer when clicking any page link inside on mobile
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1100) {
+          closeNavMenu();
+        }
+      });
+    });
   }
 
   // Mobile Accordion Submenu Toggles

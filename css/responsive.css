@@ -1,41 +1,112 @@
 /* ==========================================================================
    CARNATIC LODGE NO. 39 - RESPONSIVE STYLESHEET
-   Mobile, Tablet, and Touch Layout Adaptations
+   Mobile-First Hardened Layout & Drawer Navigation
    ========================================================================== */
 
-/* Tablets & Smaller Desktops (Max 1100px) */
+/* Universal Mobile Safety: Prevent any element from blowing out the viewport */
+*, *::before, *::after {
+  max-width: 100%;
+}
+
+img, svg, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   TABLETS & SMALLER DESKTOPS (Max 1100px)
+   ========================================================================== */
 @media (max-width: 1100px) {
   :root {
     --max-width: 980px;
   }
 
   .hero-title {
-    font-size: 2.9rem;
+    font-size: 2.8rem;
   }
 
-  /* Switch Navigation to Mobile Drawer */
+  /* Hamburger Toggle Display */
+  .mm-hamburger {
+    display: inline-flex;
+    position: relative;
+    z-index: 100001;
+  }
+
+  .mm-hamburger.active .mm-hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mm-hamburger.active .mm-hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .mm-hamburger.active .mm-hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile Drawer Backdrop */
+  .mm-nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(3, 7, 18, 0.78);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.32s ease, visibility 0.32s ease;
+  }
+
+  .mm-nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Hardened Mobile Drawer (Zero Layout Expansion) */
   .mm-nav {
     position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 320px;
-    height: calc(100vh - 80px);
-    background: rgba(6, 12, 22, 0.98);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, 86vw);
+    height: 100vh;
+    height: 100dvh;
+    background: #070e1c;
     border-left: 2px solid var(--color-gold-antique);
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem 1.5rem;
-    gap: 0.5rem;
-    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
-    transition: right var(--transition-normal);
-    z-index: 999;
+    padding: 5rem 1.4rem 2.5rem;
+    gap: 0.35rem;
+    box-shadow: -12px 0 45px rgba(0, 0, 0, 0.85);
+    z-index: 99999;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+
+    /* Completely hide from layout and hit testing when closed */
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.25s ease, 
+                visibility 0.35s ease;
   }
 
   .mm-nav.open {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
   }
 
   .mm-nav > li {
@@ -52,7 +123,7 @@
     color: var(--color-white);
   }
 
-  /* Mega menu expands inline inside drawer on mobile */
+  /* Mega Menu Expands Inline Inside Drawer on Mobile */
   .mm-mega {
     position: static;
     transform: none !important;
@@ -60,9 +131,10 @@
     visibility: visible !important;
     display: none;
     width: 100% !important;
+    max-width: 100% !important;
     grid-template-columns: 1fr !important;
     padding: 0.75rem 0.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(212, 175, 55, 0.2);
     box-shadow: none;
     margin-top: 0.4rem;
@@ -74,31 +146,15 @@
   }
 
   .mm-mega__feat {
-    display: none; /* Hide side panel on mobile for cleaner drawer */
+    display: none;
   }
 
   .mm-mega__links a {
     padding: 8px 10px;
   }
 
-  .mm-hamburger {
-    display: block;
-  }
-
-  .mm-hamburger.active .mm-hamburger-line:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .mm-hamburger.active .mm-hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .mm-hamburger.active .mm-hamburger-line:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
   .mm-header__actions .mm-btn-cta {
-    display: none; /* Accessible in the mobile drawer */
+    display: none;
   }
 
   .mm-nav-actions-mobile {
@@ -142,14 +198,56 @@
   }
 }
 
-/* Tablets (Max 860px) */
+/* ==========================================================================
+   TABLETS (Max 860px)
+   ========================================================================== */
 @media (max-width: 860px) {
   .top-bar-left {
-    display: none;
+    display: none !important;
+  }
+
+  .top-bar {
+    padding: 0.4rem 0;
   }
 
   .top-bar .container {
     justify-content: center;
+    text-align: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .top-bar-right {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    max-width: 100%;
+  }
+
+  .top-bar-right a {
+    display: none;
+  }
+
+  .mm-header__in {
+    height: 68px;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .mm-logo-crest {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mm-logo-name {
+    font-size: 1.12rem;
+  }
+
+  .mm-logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
   }
 
   /* Timeline Mobile Mode (Single Left Spine) */
@@ -201,40 +299,127 @@
   }
 }
 
-/* Mobile Phones (Max 600px) */
+/* ==========================================================================
+   SMARTPHONES (Max 600px)
+   ========================================================================== */
 @media (max-width: 600px) {
+  .top-bar-right .top-bar-item {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .mm-header__in {
+    height: 62px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .mm-logo {
+    gap: 0.6rem;
+    max-width: calc(100% - 85px);
+  }
+
+  .mm-logo-crest {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mm-logo-name {
+    font-size: 0.95rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mm-logo-sub {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mm-header__actions {
+    gap: 0.35rem;
+  }
+
   .hero {
     min-height: auto;
-    padding: 3.5rem 0 3rem;
+    padding: 2.75rem 0 2.5rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--radius-md);
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
+    line-height: 1.22;
+    word-break: break-word;
+  }
+
+  .hero-motto {
+    font-size: 0.88rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+    display: block;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
   }
 
   .hero-pillars-strip {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .page-banner {
-    padding: 3.25rem 0 2.5rem;
+    padding: 2.75rem 0 2.25rem;
   }
 
   .page-banner-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+
+  .page-banner-desc {
+    font-size: 0.92rem;
   }
 
   .section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
 
   .section-title {
-    font-size: 1.85rem;
+    font-size: 1.75rem;
   }
 
   .grid-2,
@@ -243,7 +428,7 @@
   .officers-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .form-grid-2 {
@@ -252,15 +437,15 @@
   }
 
   .form-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .stats-strip {
-    padding: 2.5rem 0;
+    padding: 2.25rem 0;
   }
 
   .stat-number {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .mm-footer__top {
@@ -285,6 +470,39 @@
   }
 
   .search-modal-backdrop {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-COMPACT MOBILE (Max 380px - iPhone SE, Galaxy A-series)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .mm-header__in {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .mm-logo-crest {
+    width: 32px;
+    height: 32px;
+  }
+
+  .mm-logo-name {
+    font-size: 0.85rem;
+  }
+
+  .mm-logo-sub {
+    font-size: 0.46rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.65rem;
   }
 }
